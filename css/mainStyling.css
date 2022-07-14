@@ -1,0 +1,569 @@
+:root{
+  --projectContainerWidth: 15vw;
+  --projectContainerHeight: 50vh;
+  --projectContainerMargin: 3vw;
+  --menuTabs: 9;
+
+  --leftConeColor: #d649cf;
+  --rightConeColor: #1e298a;
+
+  --orderOptionWidth: 22vw;
+  --orderOptionMargin: 2vw;
+}
+
+
+@font-face {
+  font-family: 'TTNormFont';
+  src:
+      local('TTNorms-Regular'),
+      url('../fonts/TTNorms-Medium.otf')
+      format('opentype');
+      font-weight: normal;
+}
+
+@font-face {
+  font-family: 'SnowySeason';
+  src:
+      local('Snowy Season'),
+      url('../fonts/Snowy Season.ttf')
+      format('opentype');
+      font-weight: normal;
+}
+
+@font-face {
+  font-family: 'SnowTopCaps';
+  src:
+      local('Snow Blue'),
+      url('../fonts/SNOW BLUE.otf')
+      format('opentype');
+      font-weight: normal;
+}
+
+@font-face {
+  font-family: 'Estave';
+  src:
+      local('Estave'),
+      url('../fonts/Estave.ttf')
+      format('opentype');
+      font-weight: normal;
+}
+
+
+body{
+  background-color: #ffffff;
+  margin: 0;
+  font-family: 'TTNormFont', sans-serif;
+
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 0px;
+  position: relative;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.menu{
+  width: calc(((100vw - 6vh) / var(--menuTabs)));
+  height: 6vh;
+  float: left;
+  margin: 0px;
+  text-align: center;
+  color: black;
+  background-color: white;
+}
+
+.menu > img{
+  position: relative;
+  height: 6vh;
+}
+
+#menuLogo{
+  width:6vh;
+}
+#companyName{
+  width: calc(((100vw - 6vh) / var(--menuTabs)) * 1.5);
+  text-align: left;
+}
+
+#companyNamePost{
+  width: calc(((100vw - 6vh) / var(--menuTabs)) * 0.5);
+}
+#companyName > h1{
+  margin-left: 60px;
+}
+
+.occupied > h1{
+  margin-top: 2px;
+  font-family:Estave;
+  font-size: 2.5vw;
+}
+.occupied > p,.occupied > h1  {
+    transition: transform 500ms;
+}
+
+.occupied:hover{
+  cursor: pointer;
+  user-select: none;
+  background-color: #f7f7f7;
+  color: black;
+}
+.occupied:hover > p,.occupied:hover > h1{
+  font-style: bold;
+  transform: translateY(-2px);
+
+}
+
+/* SPLASH IMAGE STYLING */
+.splash{
+  position: relative;
+  margin-top: 0px;
+  height: 94vh;
+  width: 100vw;
+  background-color: #5edbff;
+  background-image: url("../img/icecreamBgd.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  animation: fadeInAnimation 1s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  box-shadow: rgba(50, 50, 93, 0.00) 0px 30px 60px -12px inset, rgba(50, 50, 93, 0.8) 0px 6px 12px -2px inset;
+}
+
+@keyframes fadeInAnimation {
+    0% {
+        top: 20px;
+        opacity: 0;
+        visibility: visible;
+    }
+    100% {
+      top: 0px;
+      opacity: 1;
+      visibility: visible;
+    }
+}
+
+.splashLeft{
+  width: 50%;
+  height: 90vh;
+  float: left;
+}
+
+.splashLeft > img{
+  --imgBorder: 20px;
+  width: auto;
+  height: calc(90vh - 2 * var(--imgBorder));
+  border-radius: 100%;
+  border: var(--imgBorder) solid #d2f7f2;
+
+}
+
+.splashLeft > h1{
+  font-size: 8vw;
+  margin-left: 4vw;
+  margin-right: 21vw;
+  font-family: Courgette, cursive;
+  color: #0b1736;
+  transition: translateY() 20000ms;
+}
+
+.splashRight{
+  width: 50%;
+  height: 90vh;
+  float: right;
+}
+
+.splashRightContent{
+  position: relative;
+  width: 25vw;
+  margin-left: 20vw;
+}
+
+.splashRightContent > a > img{
+  --logoBorders: 5px;
+  width: calc(8vw - 2 * var(--logoBorders));
+  border-radius: 100vw;
+  margin-left: 2vw;
+  margin-right: 2vw;
+}
+
+#leftSplashImage{
+  border: 5px solid var(--leftConeColor);
+}
+
+#rightSplashImage{
+  border: 5px solid var(--rightConeColor);
+}
+
+
+.splashRightContent  > p{
+  font-size: 1.5em;
+  margin-top: 15vw;
+  font-family: 'TTNormFont', sans-serif;
+  color: #0b1736;
+}
+
+/* SLIDER STYLING*/
+.container{
+  padding: 0;
+  border: 0px;
+}
+
+i{
+  color: #26C281;
+  width: 40px;
+}
+
+.menuContainer{
+  position: sticky;
+  top: 0px;
+  height: 6vh;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px;
+  z-index: 3;
+
+}
+
+.recipe{
+  position: relative;
+  margin-top: 0px;
+  margin-left: 20px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px;
+  width: 22vw;
+  height: 35vh;
+  border-radius: 10px;
+  background-image: url('../img/saladtopDown.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center bottom 20px;
+  float: left;
+}
+
+.recipe:first-child{
+  margin-left: 0px;
+}
+#splashImage{
+  width: 100%;
+}
+
+.mealHeader{
+  margin-left: 5%;
+  text-decoration: none;
+  margin-top: 40px;
+  margin-left: 100px;
+  margin-bottom: 10px;
+}
+
+.description{
+  position: absolute;
+  bottom: 0px;
+  height: 60px;
+  background-color: white;
+  width: 100%;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.description > h3{
+  margin-left: 20px;
+  font-size: 1.2rem;
+  margin-bottom: 0px;
+  float:left;
+}
+
+.description > p{
+  margin-right: 20px;
+  font-size: 1rem;
+  margin-top: 20px;
+  float: right;
+}
+
+.slider{
+  position: relative;
+  width: 90%;
+  border: 2px solid white;
+  left: 5%;
+  height: 40vh;
+  overflow: hidden;
+  padding-top: 0px;
+  cursor: grab;
+
+}
+
+.slider-inner{
+  position: relative;
+  margin: 0px;
+  height: 35vh;
+  width: auto;
+  border: 2px solid white;
+  top: 10px;
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  left: 0px;
+  flex-wrap: wrap;
+}
+
+/* ABOUT PAGE STYLING */
+
+.founders{
+  width: 100%;
+  height: 70vh;
+
+}
+
+.founders > h1{
+  font-size: 3vw;
+  text-align: center;
+}
+
+.founder{
+  width:20vw;
+  height: 50vh;
+  float: left;
+}
+
+#balaji{
+  margin-left: calc(7 * (50vw - 20vw) / 8);
+  margin-right: calc(1 * (50vw - 20vw) / 8);
+}
+
+#kavin{
+  margin-left: calc(1 * (50vw - 20vw) / 8);
+  margin-right: calc(7 * (50vw - 20vw) / 8);
+}
+
+.founder img{
+  width:20vw;
+  border-radius: 100vw;
+  border: 2px solid black;
+}
+
+.founder p{
+  text-align: center;
+  font-style: italic;
+  font-size: 1.2em;
+}
+
+.mission{
+    width: 100%;
+    height: 80vh;
+    background:#ffeac7;
+    padding-top: 2vh;
+}
+
+.mission > h1{
+  font-size: 3vw;
+  text-align: center;
+
+}
+
+.missionLeft{
+  width: 40vw;
+  float: left;
+}
+
+.missionLeft img{
+  position: relative;
+  width: 90%;
+  left: 20px;
+  top: 70px;
+
+}
+
+.missionRight{
+  width: 60vw;
+  float: left;
+}
+
+.missionRight p{
+
+  margin-right: 10vw;
+  margin-left: 5vw;
+  font-size: 1.3vw;
+}
+
+/* Order Styling */
+.orderContainer{
+  width: 100vw;
+  height: 100vw;
+}
+
+.orderContainer > h1{
+  position: relative;
+  text-align: center;
+  visibility: hidden;
+  animation: fadeInAnimation 1s;
+  animation-delay: 0.3s;
+  animation-fill-mode: forwards;
+}
+
+#orderTitle{
+  position: relative;
+  margin: 2vw;
+  text-align: center;
+  font-size: 4em;
+  animation: fadeInAnimation 1s;
+  animation-fill-mode: forwards;
+
+}
+
+.options{
+    position: relative;
+    margin-left: calc((100vw - (var(--orderOptionMargin) * 6 + var(--orderOptionWidth) * 3)) / 2);
+    visibility: hidden;
+    animation: fadeInAnimation 1s;
+    animation-delay: 0.6s;
+    animation-fill-mode: forwards;
+    height: 40vh;
+
+}
+
+#flavor{
+  height: 82vh;
+}
+.options label {
+  position: relative;
+  margin: 2vw;
+  margin-top: 1vw;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px;
+  width: 22vw;
+  height: 35vh;
+  border-radius: 10px;
+  background-image: url('../img/ube.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center bottom 20px;
+  float: left;
+}
+
+input:hover + label {
+box-shadow: 0px 0px 21px 9px rgba(0,200,255,0.20);
+}
+
+input:checked + label {
+box-shadow: 0px 0px 21px 9px rgba(0,200,255,0.39);
+}
+
+.receipt{
+  --width: 30vw;
+  position: relative;
+  left: calc((100vw - var(--width)) / 2);
+  width: var(--width);
+  height:auto;
+  margin-bottom: 30px;
+  border-radius: 10px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px;
+  visibility: hidden;
+  padding: 10px;
+}
+
+input[type=submit]{
+  width:
+}
+
+table{
+  width: 100%;
+}
+tr{
+  width: 100%;
+  height:2vw;
+}
+.receipt th{
+  font-size: 1.8em;
+  font-weight: bold;
+}
+.receipt td{
+  font-size: 1.3em;
+  width:50%;
+  text-align: center;
+}
+
+#orderButton{
+  width: 40%;
+  margin-left: 30%;
+  font-size: 1.4em;
+  font-family: 'TTNormFont';
+  background-color: rgba(33, 181, 255, 0.50) ;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px;
+  border-radius: 3px;
+  margin-top: 20px;
+  visibility: hidden;
+  border: none;
+}
+
+.contactContainer{
+  width:100vw;
+}
+
+#contactSubtitle{
+  position: relative;
+  text-align: center;
+  animation: fadeInAnimation 1s;
+  animation-delay: 0.3s;
+  visibility: hidden;
+  animation-fill-mode: forwards;
+}
+
+fieldset{
+  position: relative;
+  width: 60vw;
+  left: 20vw;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 5vh;
+  animation: fadeInAnimation 1s;
+  animation-delay: 0.7s;
+  visibility: hidden;
+  animation-fill-mode: forwards;
+}
+
+.field > label{
+  position: relative;
+  font-size: 1.6em;
+  margin-top: 100px;
+}
+
+.field > input{
+  font-size: 1.6em;
+  width: 270px;
+  font-family: 'TTNormFont';
+  padding: 3px;
+}
+
+.field{
+  position: relative;
+  margin:20px;
+  float: left;
+}
+
+#subject{
+  width: 366px;
+}
+textarea{
+  width:100%;
+}
+
+fieldset > button{
+  width: 12vw;
+  height: 8vh;
+  margin-left: calc((100% - 12vw - 20px) / 2);
+  border-radius: 10px;
+  border: 1px solid blue;
+  background: #3d87ff;
+  color: white;
+  font-size: 1.3em;
+  font-family: 'TTNormFont';
+}

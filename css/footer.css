@@ -1,0 +1,107 @@
+/* FOOTER CSS STYLING */
+
+:root{
+  --footerBackground: #040036;
+  --footerWidth: 20vw;
+  --footerHeight: 25vh;
+  --footerPadding: 30px;
+  --colBorder: 2px;
+  --numCols: 3;
+  --footerBorder: 20px;
+}
+
+.footer{
+  width: calc(100vw - 2 * var(--footerBorder));
+  height: var(--footerHeight);
+  border: var(--footerBorder) solid var(--footerBackground);
+  background-color: var(--footerBackground);
+  color: white;
+  padding: 0px;
+}
+
+@media screen and (max-width: 1000px){
+  .footer{
+    height: 25vh;
+  }
+
+}
+
+.divider{
+  width: var(--footerWidth);
+  float: left;
+  height: 100%;
+  margin:0px;
+}
+
+.leftDivider{
+  text-align: right;
+  padding-right:var(--footerPadding);
+  border-right: 2px solid white;
+
+}
+
+.middleDivider{
+  text-align: center;
+  padding-left: calc(var(--footerPadding) / 2);
+  padding-right: calc(var(--footerPadding) / 2);
+
+}
+
+.rightDivider{
+  text-align: left;
+  padding-left: var(--footerPadding);
+
+  border-left: 2px solid white;
+}
+
+.divider:first-child{
+  margin-left:calc((100vw - var(--numCols) * var(--footerWidth) - (var(--numCols) - 1) * var(--footerBorder) - (var(--numCols) - 1) * var(--colBorder) - (var(--numCols) * var(--footerPadding))) / 2);
+}
+
+#disclaimer{
+  position: relative;
+  font-size: 0.7em;
+  bottom: 45px;
+}
+
+.leftDivider > p > a{
+  text-decoration: none;
+  color: white;
+}
+
+.middleDivider > img{
+  width:5vw;
+}
+
+.middleDivider > h2{
+  position: relative;
+  font-family:Estave;
+  font-size: 2.5em;
+  top: -30px;
+  font-weight: normal;
+}
+
+.rightDivider p{
+
+}
+.rightDivider i{
+  color: white;
+  font-size: 2.1vw;
+}
+/*
+#facebook{
+  font-size: 1.9vw;
+}
+
+#twitter{
+  font-size: 2.2vw;
+}
+
+#youtube{
+  font-size: 2.2vw;
+}
+
+#instagram{
+  font-size: 2.2vw;
+}
+*/

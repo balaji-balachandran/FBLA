@@ -1,0 +1,11 @@
+.checkbox{
+  background-color: white;
+  width: 1.2vw;
+  height: 1.2vw;
+  padding: 0px;
+  /*
+  border: none;
+  border-radius: 2px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px;
+  */
+}

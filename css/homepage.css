@@ -1,0 +1,26 @@
+:root{
+  --width: 50%;
+  --borderTest: 0px;
+}
+
+.left{
+  position: relative;
+  left: 0px;
+  border: var(--borderTest) solid black;
+  width: var(--width);
+  height:80vh;
+  float: left;
+  background-image: url("../img/saladtopDown.jpg");
+  background-size: cover;
+}
+
+.right{
+  position: relative;
+  right: 0px;
+  border: var(--borderTest) solid black;
+  width: var(--width);
+  height:80vh;
+  float: right;
+  background-image: url("../img/chickenSandwich.jpg");
+  background-size: cover;
+}
